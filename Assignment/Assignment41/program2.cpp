@@ -1,0 +1,61 @@
+////////////////////////////////////////////////////////////////
+//
+//  Required Header Files 
+//
+////////////////////////////////////////////////////////////////
+
+#include<iostream>
+using namespace std;
+
+///////////////////////////////////////////////////////////////
+//  Function name : Sum
+//  Description :   used to display the sum of the digits
+//  Input :         Integer
+//  Ouput :         Integer(To display on the console)
+//  Author :        Shubham Kiran Pawar
+//  Date :          10/12/2025
+///////////////////////////////////////////////////////////////
+
+int Sum(int iNo)
+{
+    static int iCnt = 1, iAns = 0, temp = 0;
+
+    if(iCnt<=iNo)
+    {
+        temp = iNo % 10;
+        iAns = iAns + temp;
+        iCnt++;
+        iNo = iNo / 10;
+        Sum(iNo);
+    }
+    cout<<"\n";
+    return iAns;
+    
+}
+
+///////////////////////////////////////////////////////////////
+//
+//  Entry point function of a application
+//
+///////////////////////////////////////////////////////////////
+
+int main()
+{
+   int iValue = 0, iRet = 0;
+
+   cout<<"Enter The Number : \n";
+   cin>>iValue;
+
+   iRet = Sum(iValue);
+
+   cout<<iRet;
+
+    return 0;
+}
+
+///////////////////////////////////////////////////////////////
+//  Test Cases: 
+//  
+//  Input : 879   Output : 24
+//
+//////////////////////////////////////////////////////////////

@@ -1,0 +1,59 @@
+//////////////////////////////////////////////////////
+//
+//  Required Header Files 
+//
+//////////////////////////////////////////////////////
+
+#include<iostream>
+
+using namespace std;
+
+//////////////////////////////////////////////////////
+//  Function name : Display
+//  Description :   used to display the pattern
+//  Input :         Integer
+//  Ouput :         Pattern
+//  Author :        Shubham Kiran Pawar
+//  Date :          10/12/2025
+//////////////////////////////////////////////////////
+
+void Display(int No)
+{
+    static int iCnt = 1;
+
+    static char ch = 'a';
+
+    if(iCnt <= No)
+    {
+        cout<<ch<<"\t";
+        iCnt++;
+        ch++;
+        Display(No);
+    }
+    cout<<"\n";
+}
+
+//////////////////////////////////////////////////////
+//
+//  Entry point function of a application
+//
+//////////////////////////////////////////////////////
+
+int main()
+{
+    int iValue = 0;
+
+    cout<<"Enter The Number : \n";
+    cin>>iValue;
+    
+    Display(iValue);
+
+    return 0;
+}
+
+//////////////////////////////////////////////////////
+//  Test Cases: 
+//  
+//  Input : 5   Output : a	 b	c	d	e
+//
+//////////////////////////////////////////////////////

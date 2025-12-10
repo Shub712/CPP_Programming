@@ -1,0 +1,60 @@
+////////////////////////////////////////////////////////////////
+//
+//  Required Header Files 
+//
+////////////////////////////////////////////////////////////////
+
+#include<iostream>
+using namespace std;
+
+///////////////////////////////////////////////////////////////
+//  Function name : Strlen
+//  Description :   used to display the count of alphabets
+//  Input :         String
+//  Ouput :         Integer(To display on the console)
+//  Author :        Shubham Kiran Pawar
+//  Date :          10/12/2025
+///////////////////////////////////////////////////////////////
+
+int Strlen(char *str)
+{
+    static int iCnt = 0, iCount  = 0;
+
+    if(str[iCnt] != '\0')
+    {
+        iCount++;
+        iCnt++;
+        Strlen(str);
+    }
+    cout<<"\n";
+    return iCount;
+    
+}
+
+///////////////////////////////////////////////////////////////
+//
+//  Entry point function of a application
+//
+///////////////////////////////////////////////////////////////
+
+int main()
+{
+   char Arr[20] = {'\0'};
+   int iRet = 0;
+
+   cout<<"Enter The String : \n";
+   cin>>Arr;
+
+   iRet = Strlen(Arr);
+
+   cout<<iRet;
+
+    return 0;
+}
+
+///////////////////////////////////////////////////////////////
+//  Test Cases: 
+//  
+//  Input : Hello   Output : 5
+//
+//////////////////////////////////////////////////////////////
